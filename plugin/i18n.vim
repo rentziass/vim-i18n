@@ -16,7 +16,7 @@ function! I18nTranslateString()
     if IsSyntaxRuby() != -1
       let @x = s:generateI18nCall(key, variables, "t('", "')")
     else
-      let @x = s:generateI18nCall(key, variables, "<%= t('", "') %>")
+      let @x = s:generateI18nCall(key, variables, "= t('", "')")
     endif
     call s:addStringToYamlStore(text, fullKey)
   else
